@@ -21,6 +21,10 @@ class Contact                       //Class Contact untuk kontak, termasuk metho
         cin >> name;
         cout << "Input phone number: ";
         cin >> phone_number;
+        cout << "Input related organization: ";
+        cin >> organization;
+        cout >> "Input tags: ";
+        cout << tags;
     }
 
     void deleteData()
