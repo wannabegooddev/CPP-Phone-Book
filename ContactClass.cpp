@@ -23,7 +23,7 @@ class contact
 } contact[LIMIT];
 
 case 1:
-        cout << "Menampilkan seluruh kontak\n" << endl;
+        cout << "Menampilkan seluruh kontak\n" << endl; //Display contacts
         for(int i = 0; i < LIMIT; i++)
         {
             if(contact[i].name != "\0")
@@ -36,3 +36,4 @@ case 1:
             }
         }
         break;
+
