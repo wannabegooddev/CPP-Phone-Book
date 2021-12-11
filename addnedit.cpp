@@ -26,17 +26,18 @@ class contact
 void addnedit::addcontact;  //function to add new contact
 {
     cout << "menambahkan contact baru" << endl;
+    if(count == LIMIT-1)
+    {
+        cout << "Jumlah kontak sudah mencapai batasnya(100).";
+    }
     for(int i = 0; i < LIMIT; i++) //loop to check for new empty entry
     {
         if(contact[i].nama == "")
         {
             contact[i].adddata();
+            count++;
             break;
         }
-    }
-    else //if the entry is full
-    {
-        cout << "Jumlah kontak sudah mencapai batasnya(100).";
     }
     break;
 }
