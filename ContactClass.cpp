@@ -5,7 +5,7 @@
 using namespace std;
 
 void start();
-int manu();
+int mainMenu();
 int k=0;
 
 class contact
@@ -26,23 +26,39 @@ class contact
     }
 } contact[LIMIT];
 
+
 int main()
 {
 	start();
 	string name[100];
 	string no[100];
-	int check=0;
+	int choice=0;
 	int Total_contacts=0;
     check=manu();
     do
     {
-        //Search by Number
-		if(check==5)
+	    //Display contacts
+	    	if (choice==2)
+		{
+			int choice2=0;
+			for(int i=0; i<100;i++)
+			{
+				if(name[i]!="\0")
+				cout<<"\t\t\t\t\t Name :"<<name[i]<< "      Phone :"<<no[i]<<endl;
+				check2++;
+			}
+			if(choice2==0)
+			{
+				cout<<"\t\t\t\t\t";
+			}
+		}
+	    //Search by Number
+		else if(choice==5)
 		{
 			string temp;
 			cout<<"Phone number: ";
 			cin>>temp;
-			int check2=0;
+			int choice2=0;
 			for(int i=0;i<100;i++)
 			{
 				if(temp==no[i])
@@ -52,14 +68,14 @@ int main()
 					check2++;
 				}
 			}
-			if(check2==0)
+			if(choice2==0)
 			{
 				cout<<"This Number is not found in your contact list\n";
 			}
 		}
 
         //Search By Name
-		else if(check==5)
+		else if(choice==5)
 		{
             string temp;
 			cout<<"Name: ";
@@ -75,29 +91,24 @@ int main()
 				}
 
 			}
-			if(check2==0)
+			if(choice2==0)
 			{
 				cout<<"This name is not found in your contact list\n";
 			}
 		}
+	    	choice=mainMenu();
     }
 }
 
-case 1:
-        cout << "Menampilkan seluruh kontak\n" << endl; //Display contacts
-        for(int i = 0; i < LIMIT; i++)
-        {
-            if(contact[i].name != "\0")
-            {
-                cout << i+1 << endl;
-                cout << "Nama:" << contact[i].name << endl;
-                cout << "Nomor telpon:" << contact[i].phone_number << endl;
-                cout << "Organisasi:" << contact[i].organization << endl;
-                cout << "Tags:" << contact[i].tags << endl << endl;
-            }
-        }
-        break;
-
-
-
-
+int mainMenu()                     //Main Menu dari program
+{
+    cout << "==================================================================" << endl;
+    cout << "Selamat datang di program buku telpon. Apa yang mau Anda lakukan?\n";
+    cout << "1. Menampilkan seluruh kontak\n2. Mengubah info kontak\n3. Menambah kontak\n4. Menghapus kontak\n5. Mencari kontak\n6. Keluar\n";
+    cout << "==================================================================" << endl;
+    cin >> choice;
+	int a;
+	cin>>a;
+	system("cls");
+	return a;
+}
