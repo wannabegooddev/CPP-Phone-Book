@@ -13,6 +13,7 @@ class contact
 {
     public:
     string nama, organisasi, nomor, tag;
+    string contact[LIMIT];
 
     void addnedit::adddata;
     {
@@ -21,7 +22,7 @@ class contact
         cout >> "No. telp: "; cin << nomor;
         cout >> "tag: "; cin << tag;
     }
-}contact[LIMIT];
+};
 
 
 void addnedit::addcontact;
