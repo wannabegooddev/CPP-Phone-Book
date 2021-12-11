@@ -6,7 +6,7 @@ using namespace std;
 
 void start();
 int mainMenu();
-int k=0;
+int e=0;
 
 class contact
 {
@@ -33,10 +33,9 @@ int main()
 	string name[100];
 	string no[100];
 	int choice=0;
-	int Total_contacts=0;
-    check=manu();
-    do
-    {
+    	choice=mainMenu();
+    	do
+   	{
 	    //Display contacts
 	    	if (choice==2)
 		{
@@ -44,7 +43,7 @@ int main()
 			for(int i=0; i<100;i++)
 			{
 				if(name[i]!="\0")
-				cout<<"\t\t\t\t\t Name :"<<name[i]<< "      Phone :"<<no[i]<<endl;
+				cout<<"Name:"<<name[i]<< "      Phone :"<<no[i]<<endl;
 				check2++;
 			}
 			if(choice2==0)
@@ -109,6 +108,5 @@ int mainMenu()                     //Main Menu dari program
     cin >> choice;
 	int a;
 	cin>>a;
-	system("cls");
 	return a;
 }
