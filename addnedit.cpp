@@ -1,11 +1,9 @@
 #include "addnedit.h"
-#include "data.h"
 #include <iostream>
 #include <string>
 #define LIMIT 100;
 
 int count = 0;
-int current = -1;
 int entry;
 
 using namespace std;
